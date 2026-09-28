@@ -36,6 +36,24 @@ const sliderConfig = [
   { key: "rotate", label: "Rotate", min: -180, max: 180, step: 1, suffix: "°" },
 ] as const;
 
+type Preset = {
+  name: string;
+  values: Partial<Omit<FilterState, "rotate">>;
+};
+
+const presets: Preset[] = [
+  { name: "Vivid", values: { saturation: 140, contrast: 110 } },
+  { name: "Black & White", values: { grayscale: 100, contrast: 110 } },
+  { name: "Vintage", values: { sepia: 45, contrast: 90, brightness: 105, saturation: 85 } },
+  { name: "Faded", values: { contrast: 85, brightness: 110, saturation: 80 } },
+  { name: "Dramatic", values: { contrast: 140, saturation: 90, brightness: 95 } },
+  { name: "Soft", values: { blur: 1, brightness: 105, contrast: 95 } },
+];
+
+const lookKeys = sliderConfig
+  .map(({ key }) => key)
+  .filter((key): key is Exclude<typeof key, "rotate"> => key !== "rotate");
+
 export default function Home() {
   const [image, setImage] = useState<string | null>(null);
   const [fileName, setFileName] = useState("edited-photo.jpg");
@@ -59,6 +77,15 @@ export default function Home() {
   };
 
   const resetFilters = () => setFilters(initialFilters);
+
+  const applyPreset = (preset: Preset) => {
+    setFilters((current) => ({ ...initialFilters, ...preset.values, rotate: current.rotate }));
+  };
+
+  const isPresetActive = (preset: Preset) => {
+    const target = { ...initialFilters, ...preset.values };
+    return lookKeys.every((key) => filters[key] === target[key]);
+  };
 
   const handleDownload = () => {
     if (!image) return;
@@ -152,7 +179,29 @@ export default function Home() {
           </section>
 
           <aside className="rounded-3xl border border-white/10 bg-slate-900/80 p-4 shadow-xl shadow-slate-950/40">
-            <h2 className="text-xl font-semibold">Adjustments</h2>
+            <h2 className="text-xl font-semibold">Presets</h2>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {presets.map((preset) => {
+                const active = isPresetActive(preset);
+                return (
+                  <button
+                    key={preset.name}
+                    type="button"
+                    onClick={() => applyPreset(preset)}
+                    aria-pressed={active}
+                    className={`rounded-full border px-3 py-1.5 text-sm transition ${
+                      active
+                        ? "border-cyan-400 bg-cyan-400 font-semibold text-slate-950"
+                        : "border-white/15 bg-white/5 text-slate-200 hover:bg-white/10"
+                    }`}
+                  >
+                    {preset.name}
+                  </button>
+                );
+              })}
+            </div>
+
+            <h2 className="mt-6 text-xl font-semibold">Adjustments</h2>
             <div className="mt-5 space-y-4">
               {sliderConfig.map(({ key, label, min, max, step, suffix }) => (
                 <div key={key}>
