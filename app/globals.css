@@ -1,19 +1,29 @@
 @import "tailwindcss";
 
 :root {
-  --background: #020817;
-  --foreground: #e2e8f0;
+  --background: #0e0e0e;
+  --surface: #151515;
+  --foreground: #ece7dd;
+  --muted: #7d7873;
+  --line: #262626;
+  --accent: #c8b48c;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+  --font-sans: var(--font-sans);
 }
 
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 body {
@@ -21,7 +31,7 @@ body {
   min-height: 100vh;
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
 * {
@@ -29,6 +39,131 @@ body {
 }
 
 button,
-input {
+input,
+textarea,
+select {
   font: inherit;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--background);
+}
+
+/* Small mono label used for eyebrows, nav items and buttons. */
+.label {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+/* Underlined form field used on the contact and login pages. */
+.field {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  padding: 0.75rem 0;
+  color: var(--foreground);
+  outline: none;
+  transition: border-color 150ms ease;
+}
+
+.field:focus {
+  border-bottom-color: var(--accent);
+}
+
+.field::placeholder {
+  color: #4a4744;
+}
+
+/* Boxed field used in the admin area. */
+.admin-field {
+  width: 100%;
+  background: var(--background);
+  border: 1px solid var(--line);
+  padding: 0.6rem 0.75rem;
+  color: var(--foreground);
+  outline: none;
+  border-radius: 2px;
+  transition: border-color 150ms ease;
+}
+
+.admin-field:focus {
+  border-color: var(--accent);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 0.85rem 2rem;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.btn-outline:hover {
+  background: var(--accent);
+  color: var(--background);
+}
+
+.btn-solid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: var(--accent);
+  color: var(--background);
+  padding: 0.85rem 2rem;
+  transition: filter 150ms ease;
+}
+
+.btn-solid:hover {
+  filter: brightness(1.08);
+}
+
+.btn-solid:disabled,
+.btn-outline:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Masonry layout for the gallery. */
+.masonry {
+  column-gap: 0.75rem;
+  columns: 1;
+}
+
+@media (min-width: 640px) {
+  .masonry {
+    columns: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry {
+    columns: 3;
+  }
+}
+
+.masonry > * {
+  break-inside: avoid;
+  margin-bottom: 0.75rem;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fade-in 700ms ease both;
 }

@@ -1,0 +1,148 @@
+{
+  "site": {
+    "name": "Elara Voss",
+    "email": "hello@elaravoss.com",
+    "location": "Berlin, Germany",
+    "instagram": "@elaravoss.photo",
+    "twitter": "@elaravoss",
+    "behance": "Elara Voss",
+    "bookingNote": "Currently accepting commissions for Q1 2027. Inquiries welcome for Q4 2026 on a case-by-case basis."
+  },
+  "hero": {
+    "eyebrow": "Fine Art Photography",
+    "headline": "Light finds its",
+    "headlineItalic": "own geometry."
+  },
+  "about": {
+    "heading": "Elara Voss",
+    "teaser": "Berlin-based photographer working in portraiture and landscape. Fifteen years of looking for the minute before and the minute after, when a subject reveals something unguarded. Published in Foam Magazine, The British Journal of Photography and Le Monde.",
+    "paragraphs": [
+      "Born in Hamburg, currently based in Berlin. Elara began making photographs at seventeen with a borrowed Rolleiflex, drawn to the way medium format film compressed time into a single held breath.",
+      "Over fifteen years she has developed a body of work that refuses the decisive moment in favor of something quieter — the minute before and the minute after, when a subject is most themselves.",
+      "Her work has appeared in Foam Magazine, The British Journal of Photography, Aperture Online, and Le Monde M. She has exhibited at Foam Amsterdam, C/O Berlin, and Rencontres d'Arles."
+    ],
+    "portrait": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1400&q=80"
+  },
+  "photos": [
+    {
+      "id": "quiet-study",
+      "src": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1600&q=80",
+      "title": "Quiet Study",
+      "category": "Portraits",
+      "width": 4,
+      "height": 5,
+      "featured": false,
+      "hero": true
+    },
+    {
+      "id": "into-the-fog",
+      "src": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1600&q=80",
+      "title": "Into the Fog",
+      "category": "Landscapes",
+      "width": 16,
+      "height": 9,
+      "featured": true,
+      "hero": true
+    },
+    {
+      "id": "crimson",
+      "src": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=1600&q=80",
+      "title": "Crimson",
+      "category": "Portraits",
+      "width": 4,
+      "height": 5,
+      "featured": true,
+      "hero": false
+    },
+    {
+      "id": "after-hours",
+      "src": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1600&q=80",
+      "title": "After Hours",
+      "category": "Editorial",
+      "width": 3,
+      "height": 4,
+      "featured": true,
+      "hero": false
+    },
+    {
+      "id": "green-hills",
+      "src": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80",
+      "title": "Green Hills",
+      "category": "Landscapes",
+      "width": 4,
+      "height": 3,
+      "featured": true,
+      "hero": false
+    },
+    {
+      "id": "night-shift",
+      "src": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1600&q=80",
+      "title": "Night Shift",
+      "category": "Editorial",
+      "width": 3,
+      "height": 4,
+      "featured": false,
+      "hero": true
+    },
+    {
+      "id": "last-light",
+      "src": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1600&q=80",
+      "title": "Last Light",
+      "category": "Landscapes",
+      "width": 4,
+      "height": 3,
+      "featured": false,
+      "hero": false
+    },
+    {
+      "id": "silver",
+      "src": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1600&q=80",
+      "title": "Silver",
+      "category": "Portraits",
+      "width": 4,
+      "height": 3,
+      "featured": false,
+      "hero": false
+    },
+    {
+      "id": "black-study",
+      "src": "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=1600&q=80",
+      "title": "Black Study",
+      "category": "Portraits",
+      "width": 4,
+      "height": 5,
+      "featured": false,
+      "hero": false
+    },
+    {
+      "id": "velvet",
+      "src": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1600&q=80",
+      "title": "Velvet",
+      "category": "Editorial",
+      "width": 3,
+      "height": 4,
+      "featured": false,
+      "hero": false
+    },
+    {
+      "id": "nature",
+      "src": "/uploads/1791212415887-80f77c5f.jpg",
+      "title": "nature",
+      "category": "Landscapes",
+      "width": 411,
+      "height": 486,
+      "featured": false,
+      "hero": false
+    },
+    {
+      "id": "aeewfwerwefw",
+      "src": "/uploads/1791212463401-b5365768.jpg",
+      "title": "aeewfwerwefw",
+      "category": "Portraits",
+      "width": 1910,
+      "height": 2000,
+      "featured": false,
+      "hero": true
+    }
+  ]
+}

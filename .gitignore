@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# keep the example env file in the repo
+!.env.example
+
+# runtime uploads from the admin area
+/public/uploads/*
+!/public/uploads/.gitkeep
